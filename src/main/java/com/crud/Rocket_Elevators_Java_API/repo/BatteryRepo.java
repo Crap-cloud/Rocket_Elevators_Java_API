@@ -2,7 +2,7 @@ package com.crud.Rocket_Elevators_Java_API.repo;
 
 import java.util.Optional;
 
-import com.crud.Rocket_Elevators_Java_API.models.Battery;
+import com.crud.Rocket_Elevators_Java_API.models.Batteries;
 import org.springframework.data.repository.CrudRepository;
 import com.crud.Rocket_Elevators_Java_API.models.Users;
 import org.springframework.stereotype.Repository;
@@ -10,6 +10,6 @@ import org.springframework.stereotype.Repository;
 // This will be AUTO IMPLEMENTED by Spring into a Bean called userRepository
 // CRUD refers Create, Read, Update, Delete
 @Repository
-public interface BatteryRepo extends CrudRepository<Battery, Integer> {
+public interface BatteryRepo extends CrudRepository<Batteries, Integer> {
 
 }

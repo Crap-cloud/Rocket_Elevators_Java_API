@@ -59,7 +59,7 @@ public class Addresses implements Serializable {
 
 
     //  Relations between tables
-    @OneToMany(mappedBy = "addresses")
-    private List<Building> buildings = new ArrayList();
+//    @OneToMany(mappedBy = "addresses")
+//    private List<Building> buildings = new ArrayList();
 }
 

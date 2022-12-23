@@ -42,12 +42,12 @@ public class Columns implements Serializable {
 
 
     //  Relations between tables
-    @ManyToOne
-    @JoinColumn(name = "battery_id")
-    @JsonIgnore
-    private Battery batteries;
-    @OneToMany(mappedBy = "columns", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<Elevators> elevators = new ArrayList();
-    @OneToMany(mappedBy = "columns", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<Interventions> interventions = new ArrayList();
+//    @ManyToOne
+//    @JoinColumn(name = "battery_id")
+//    @JsonIgnore
+//    private Battery batteries;
+//    @OneToMany(mappedBy = "columns", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+//    private List<Elevators> elevators = new ArrayList();
+//    @OneToMany(mappedBy = "columns", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+//    private List<Interventions> interventions = new ArrayList();
 }

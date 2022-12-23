@@ -22,9 +22,7 @@ import com.crud.Rocket_Elevators_Java_API.exceptions.ColumnsNotFoundException;
 public class ColumnController {
     ColumnsService ColumnsService;
     @Autowired
-    public ColumnController(ColumnsService ColumnsService) {
-        this.ColumnsService = ColumnsService;
-    }
+    public ColumnController(ColumnsService ColumnsService) {this.ColumnsService = ColumnsService;}
     @GetMapping(value="/columns")
     public List<Columns> getAllColumns(){
         return ColumnsService.getAllColumns();

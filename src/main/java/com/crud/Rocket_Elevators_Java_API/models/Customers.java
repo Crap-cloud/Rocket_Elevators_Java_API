@@ -58,12 +58,12 @@ public class Customers implements Serializable {
 
 
     //  Relations between tables
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    @JsonIgnore
-    private Users users;
-    @OneToMany(mappedBy = "customers", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<Building> buildings = new ArrayList();
-    @OneToMany(mappedBy = "customers", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<Interventions> interventions = new ArrayList();
+//    @ManyToOne
+//    @JoinColumn(name = "user_id")
+//    @JsonIgnore
+//    private Users users;
+//    @OneToMany(mappedBy = "customers")
+//    private List<Building> buildings = new ArrayList();
+//    @OneToMany(mappedBy = "customers")
+//    private List<Interventions> interventions = new ArrayList();
 }

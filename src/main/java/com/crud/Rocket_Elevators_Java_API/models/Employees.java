@@ -50,8 +50,8 @@ public class Employees implements Serializable {
     private LocalDateTime updated_at;
 
     //  Relations between tables
-    @OneToMany(mappedBy = "employees", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<Battery> batteries = new ArrayList();
-    @OneToMany(mappedBy = "employees", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<Interventions> interventions = new ArrayList();
+//    @OneToMany(mappedBy = "employees", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+//    private List<Battery> batteries = new ArrayList();
+//    @OneToMany(mappedBy = "employees", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+//    private List<Interventions> interventions = new ArrayList();
 }

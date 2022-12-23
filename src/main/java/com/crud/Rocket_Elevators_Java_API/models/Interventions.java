@@ -45,28 +45,28 @@ public class Interventions implements Serializable {
 
 
     //  Relations between tables
-    @ManyToOne
-    @JoinColumn(name = "customer_id")
-    @JsonIgnore
-    private Customers customers;
-    @ManyToOne
-    @JoinColumn(name = "building_id")
-    @JsonIgnore
-    private Building buildings;
-    @ManyToOne
-    @JoinColumn(name = "battery_id")
-    @JsonIgnore
-    private Battery batteries;
-    @ManyToOne
-    @JoinColumn(name = "column_id")
-    @JsonIgnore
-    private Columns columns;
-    @ManyToOne
-    @JoinColumn(name = "elevator_id")
-    @JsonIgnore
-    private Elevators elevators;
-    @ManyToOne
-    @JoinColumn(name = "employee_id")
-    @JsonIgnore
-    private Employees employees;
+//    @ManyToOne
+//    @JoinColumn(name = "customer_id")
+//    @JsonIgnore
+//    private Customers customers;
+//    @ManyToOne
+//    @JoinColumn(name = "building_id")
+//    @JsonIgnore
+//    private Building buildings;
+//    @ManyToOne
+//    @JoinColumn(name = "battery_id")
+//    @JsonIgnore
+//    private Battery batteries;
+//    @ManyToOne
+//    @JoinColumn(name = "column_id")
+//    @JsonIgnore
+//    private Columns columns;
+//    @ManyToOne
+//    @JoinColumn(name = "elevator_id")
+//    @JsonIgnore
+//    private Elevators elevators;
+//    @ManyToOne
+//    @JoinColumn(name = "employee_id")
+//    @JsonIgnore
+//    private Employees employees;
 }

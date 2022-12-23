@@ -5,7 +5,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.crud.Rocket_Elevators_Java_API.models.Building;
+import com.crud.Rocket_Elevators_Java_API.models.Buildings;
 import com.crud.Rocket_Elevators_Java_API.repo.BuildingRepo;
 @Service
 public class BuildingsService implements IBuildings {
@@ -15,18 +15,18 @@ public class BuildingsService implements IBuildings {
         this.buildingRepo = buildingRepo;
     }
     @Override
-    public List<Building> getAllBuildings() {
+    public List<Buildings> getAllBuildings() {
         // TODO Auto-generated method stub
-        return (List<Building>) buildingRepo.findAll();
+        return (List<Buildings>) buildingRepo.findAll();
     }
 
     @Override
-    public Optional<Building> findById(int id) {
+    public Optional<Buildings> findById(int id) {
         // TODO Auto-generated method stub
         return buildingRepo.findById(id);
     }
     @Override
-    public Building save(Building std) {
+    public Buildings save(Buildings std) {
         // TODO Auto-generated method stub
         return buildingRepo.save(std);
     }

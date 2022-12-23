@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.crud.Rocket_Elevators_Java_API.models.Battery;
+import com.crud.Rocket_Elevators_Java_API.models.Batteries;
 import com.crud.Rocket_Elevators_Java_API.repo.BatteryRepo;
 @Service
 public class BatteriesService implements IBatteries {
@@ -14,18 +14,18 @@ public class BatteriesService implements IBatteries {
         this.batteryRepo = batteryRepo;
     }
     @Override
-    public List<Battery> getAllBatteries() {
+    public List<Batteries> getAllBatteries() {
         // TODO Auto-generated method stub
-        return (List<Battery>) batteryRepo.findAll();
+        return (List<Batteries>) batteryRepo.findAll();
     }
 
     @Override
-    public Optional<Battery> findById(int id) {
+    public Optional<Batteries> findById(int id) {
         // TODO Auto-generated method stub
         return batteryRepo.findById(id);
     }
     @Override
-    public Battery save(Battery std) {
+    public Batteries save(Batteries std) {
         // TODO Auto-generated method stub
         return batteryRepo.save(std);
     }

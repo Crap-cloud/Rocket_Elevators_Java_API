@@ -33,6 +33,6 @@ public class Users implements Serializable {
 
 
     //  Relations between tables
-    @OneToMany(mappedBy = "users", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<Customers> customers = new ArrayList();
+//    @OneToMany(mappedBy = "users", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+//    private List<Customers> customers = new ArrayList();
 }

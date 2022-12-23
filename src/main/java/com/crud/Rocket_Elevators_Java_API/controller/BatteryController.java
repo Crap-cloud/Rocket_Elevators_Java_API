@@ -1,6 +1,6 @@
 package com.crud.Rocket_Elevators_Java_API.controller;
 
-import com.crud.Rocket_Elevators_Java_API.models.Battery;
+import com.crud.Rocket_Elevators_Java_API.models.Batteries;
 import com.crud.Rocket_Elevators_Java_API.services.BatteriesService;
 
 import java.util.List;
@@ -26,30 +26,30 @@ public class BatteryController {
         this.batteriesService = batteriesServiceS;
     }
     @GetMapping(value="/batteries")
-    public List<Battery> getAllBatteries(){
+    public List<Batteries> getAllBatteries(){
         return batteriesService.getAllBatteries();
     }
     @GetMapping(value="/batteries/{id}")
-    public Battery getBatteriesById(@PathVariable("id") @Min(1) int id) {
-        Battery std = batteriesService.findById(id)
+    public Batteries getBatteriesById(@PathVariable("id") @Min(1) int id) {
+        Batteries std = batteriesService.findById(id)
                 .orElseThrow(()->new BatteriesNotFoundException("Battery with "+id+" is Not Found!"));
         return std;
     }
     @PostMapping(value="/batteries")
-    public Battery addBattery(@Valid @RequestBody Battery std) {
+    public Batteries addBattery(@Valid @RequestBody Batteries std) {
         return batteriesService.save(std);
     }
     @PutMapping(value="/batteries/{id}")
-    public Battery updateUsers(@PathVariable("id") @Min(1) int id, @Valid @RequestBody Battery newstd) {
-        Battery stdu = batteriesService.findById(id)
+    public Batteries updateUsers(@PathVariable("id") @Min(1) int id, @Valid @RequestBody Batteries newstd) {
+        Batteries stdu = batteriesService.findById(id)
                 .orElseThrow(()->new BatteriesNotFoundException("Battery with "+id+" is Not Found!"));
         return batteriesService.save(stdu);
     }
     @DeleteMapping(value="/batteries/{id}")
     public String deleteBatteries(@PathVariable("id") @Min(1) int id) {
-        Battery std = batteriesService.findById(id)
+        Batteries std = batteriesService.findById(id)
                 .orElseThrow(()->new BatteriesNotFoundException("Battery with "+id+" is Not Found!"));
         batteriesService.deleteById(std.getId());
-        return "Battery with ID :"+id+" is deleted";
+        return "Batteries with ID :"+id+" is deleted";
     }
 }

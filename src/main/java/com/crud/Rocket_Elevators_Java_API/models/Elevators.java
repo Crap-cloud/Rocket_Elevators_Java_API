@@ -54,10 +54,10 @@ public class Elevators implements Serializable {
 
 
     //  Relations between tables
-    @ManyToOne
-    @JoinColumn(name = "column_id")
-    @JsonIgnore
-    private Columns columns;
-    @OneToMany(mappedBy = "elevators", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<Interventions> interventions = new ArrayList();
+//    @ManyToOne
+//    @JoinColumn(name = "column_id")
+//    @JsonIgnore
+//    private Columns columns;
+//    @OneToMany(mappedBy = "elevators", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+//    private List<Interventions> interventions = new ArrayList();
 }

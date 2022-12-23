@@ -1,6 +1,5 @@
 package com.crud.Rocket_Elevators_Java_API.models;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -14,8 +13,6 @@ import lombok.experimental.Accessors;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity // This tells Hibernate to make a table out of this class
 @Getter
@@ -24,7 +21,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "batteries")
-public class Battery implements Serializable {
+public class Batteries implements Serializable {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer id;
@@ -48,16 +45,16 @@ public class Battery implements Serializable {
     private LocalDateTime updated_at;
 
     //  Relations between tables
-    @ManyToOne
-    @JoinColumn(name="building_id")
-    @JsonIgnore
-    private Building buildings;
-    @ManyToOne
-    @JoinColumn(name = "employee_id")
-    @JsonIgnore
-    private Employees employees;
-    @OneToMany(mappedBy = "batteries", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<Columns> columns = new ArrayList();
-    @OneToMany(mappedBy = "batteries", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<Interventions> interventions = new ArrayList();
+//    @ManyToOne
+//    @JoinColumn(name="building_id")
+//    @JsonIgnore
+//    private Building buildings;
+//    @ManyToOne
+//    @JoinColumn(name = "employee_id")
+//    @JsonIgnore
+//    private Employees employees;
+//    @OneToMany(mappedBy = "batteries", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+//    private List<Columns> columns = new ArrayList();
+//    @OneToMany(mappedBy = "batteries", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+//    private List<Interventions> interventions = new ArrayList();
 }
