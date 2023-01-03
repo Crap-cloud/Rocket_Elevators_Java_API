@@ -10,9 +10,12 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.Accessors;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Collection;
 
 @Entity // This tells Hibernate to make a table out of this class
 @Getter
@@ -21,7 +24,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "users")
-public class Users implements Serializable {
+public class Users implements UserDetails {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer id;
@@ -29,8 +32,8 @@ public class Users implements Serializable {
     @Column(nullable = true, name = "email")
     private String email;
     @JsonIgnore
-    @Column(nullable = true, name = "encryptedPassword")
-    private String encryptedPassword;
+    @Column(nullable = true, name = "encrypted_password")
+    private String encrypted_password;
 
     @JsonIgnore
     @Override
@@ -41,7 +44,7 @@ public class Users implements Serializable {
     @JsonIgnore
     @Override
     public String getPassword() {
-        return encryptedPassword;
+        return encrypted_password;
     }
 
     @Override
