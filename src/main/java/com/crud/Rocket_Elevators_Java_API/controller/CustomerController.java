@@ -35,17 +35,17 @@ public class CustomerController {
                 .orElseThrow(()->new CustomersNotFoundException("Customer with "+id+" is Not Found!"));
         return std;
     }
-    @PostMapping(value="/customer")
+    @PostMapping(value="/customer/new")
     public Customers addCustomer(@Valid @RequestBody Customers std) {
         return CustomersService.save(std);
     }
-    @PutMapping(value="/customers/{id}")
+    @PutMapping(value="/customers/update/{id}")
     public Customers updateUsers(@PathVariable("id") @Min(1) int id, @Valid @RequestBody Customers newstd) {
         Customers stdu = CustomersService.findById(id)
                 .orElseThrow(()->new CustomersNotFoundException("Customer with "+id+" is Not Found!"));
         return CustomersService.save(stdu);
     }
-    @DeleteMapping(value="/customers/{id}")
+    @DeleteMapping(value="/customers/delete/{id}")
     public String deleteCustomers(@PathVariable("id") @Min(1) int id) {
         Customers std = CustomersService.findById(id)
                 .orElseThrow(()->new CustomersNotFoundException("Customer with "+id+" is Not Found!"));

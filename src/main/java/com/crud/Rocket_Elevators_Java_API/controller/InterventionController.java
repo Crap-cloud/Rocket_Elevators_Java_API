@@ -35,17 +35,17 @@ public class InterventionController {
                 .orElseThrow(()->new InterventionsNotFoundException("Intervention with "+id+" is Not Found!"));
         return std;
     }
-    @PostMapping(value="/interventions")
+    @PostMapping(value="/interventions/new")
     public Interventions addIntervention(@Valid @RequestBody Interventions std) {
         return InterventionsService.save(std);
     }
-    @PutMapping(value="/interventions/{id}")
+    @PutMapping(value="/interventions/update/{id}")
     public Interventions updateUsers(@PathVariable("id") @Min(1) int id, @Valid @RequestBody Interventions newstd) {
         Interventions stdu = InterventionsService.findById(id)
                 .orElseThrow(()->new InterventionsNotFoundException("Intervention with "+id+" is Not Found!"));
         return InterventionsService.save(stdu);
     }
-    @DeleteMapping(value="/interventions/{id}")
+    @DeleteMapping(value="/interventions/delete/{id}")
     public String deleteInterventions(@PathVariable("id") @Min(1) int id) {
         Interventions std = InterventionsService.findById(id)
                 .orElseThrow(()->new InterventionsNotFoundException("Intervention with "+id+" is Not Found!"));
